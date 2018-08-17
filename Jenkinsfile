@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile.build'
-    }
-
-  }
+  agent none
   stages {
     stage('step 1 ') {
       steps {
@@ -13,10 +8,5 @@ pipeline {
         error 'ERROR!'
       }
     }
-  }
-  environment {
-    dir = 'build'
-    label = 'my-defined-label'
-    additionalBuildArgs = '--build-arg version=1.0.2'
   }
 }
